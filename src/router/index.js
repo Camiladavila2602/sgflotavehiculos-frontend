@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import Vehiculos from '../views/vehiculos.vue';
 import EditarVehiculo from '../components/vehiculos/EditarVehiculo.vue';
 import NewVehiculo from '../components/vehiculos/NewVehiculo.vue';
+import Rutas from '../views/rutas.vue';
+import EditarRuta from '../components/rutas/EditarRuta.vue';
+import NewRuta from '../components/rutas/NewRuta.vue';
 
 const routes = [{
         path: '/',
@@ -23,6 +26,21 @@ const routes = [{
         path: '/add-vehiculos/',
         name: 'NewVehiculo',
         component: NewVehiculo
+    },
+    {
+        path: '/rutas',
+        name: 'Rutas',
+        component: Rutas
+    },
+    {
+        path: '/editar-ruta/:id',
+        name: 'EditarRuta',
+        component: EditarRuta
+    },
+    {
+        path: '/add-rutas/',
+        name: 'NewRuta',
+        component: NewRuta
     },
     {
         path: '/about',

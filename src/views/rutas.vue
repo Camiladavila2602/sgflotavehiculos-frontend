@@ -3,35 +3,33 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="alert alert-success" role="alert">
-                    <h1 class="mb-0" style="color: green;">Vehiculos</h1>
+                    <h1 class="mb-0" style="color: green;">Rutas</h1>
                 </div>
-                <button @click="newVehiculo()" class="btn btn-succes mx-2">
+                <button @click="newRuta()" class="btn btn-succes mx-2">
                     <font-awesome-icon icon="plus" />
                 </button>
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">matricula</th>
-                            <th scope="col">marca</th>
-                            <th scope="col">modelo</th>
-                            <th scope="col">año</th>
-                            <th scope="col">estado</th>
+                            <th scope="col">descripcion</th>
+                            <th scope="col">origen</th>
+                            <th scope="col">destino</th>
+                            <th scope="col">distancia</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(vehiculo, index) in vehiculos" :key="index">
-                            <td>{{ vehiculo.id }}</td>
-                            <td>{{ vehiculo.matricula }}</td>
-                            <td>{{ vehiculo.marca }}</td>
-                            <td>{{ vehiculo.modelo }}</td>
-                            <td>{{ vehiculo.ano }}</td>
-                            <td>{{ vehiculo.estado }}</td>
+                        <tr v-for="(ruta, index) in rutas" :key="index">
+                            <td>{{ ruta.id }}</td>
+                            <td>{{ ruta.descripcion }}</td>
+                            <td>{{ ruta.origen }}</td>
+                            <td>{{ ruta.destino }}</td>
+                            <td>{{ ruta.distancia }}</td>
                             <td>
-                                <button @click="deleteVehiculo(vehiculo.id)" class="btn btn-succes mx-2">
+                                <button @click="deleteRuta(ruta.id)" class="btn btn-succes mx-2">
                                     <font-awesome-icon icon="trash" />
                                 </button>
-                                <button @click="editVehiculo(vehiculo.id)" class="btn btn-succes mx-2">
+                                <button @click="editRuta(ruta.id)" class="btn btn-succes mx-2">
                                     <font-awesome-icon icon="pencil" />
                                 </button>
                             </td>
@@ -46,42 +44,43 @@
 import axios from 'axios'
 import Swal from 'sweetalert2'
 export default {
-    name: 'Clase',
+    name: 'Ruta',
     data() {
         return {
-            vehiculos: []
+            rutas: []
         }
     },
     methods: {
-        deleteVehiculo(codigo) {
+        deleteRuta(codigo) {
             Swal.fire({
-                title: `Do you want to delete the Vehiculo with id ${codigo}?`,
+                title: `Do you want to delete the Ruta with id ${codigo}?`,
                 showCancelButton: true,
                 confirmButtonText: `Delete`,
             }).then((result) => {
                 if (result.isConfirmed) {
-                    axios.delete(`http://127.0.0.1:8000/api/vehiculos/${codigo}`)
+                    axios.delete(`http://127.0.0.1:8000/api/rutas/${codigo}`)
                         .then(response => {
                             if (response.data.success) {
                                 window.location.reload()
                                 Swal.fire('Deleted!!', '', 'success')
                                 this.products = response.data.products
+                                
                             }
                         })
                 }
             })
         },
-        editVehiculo(id) {
-            this.$router.push({ name: 'EditarVehiculo', params: { id: `${id}` } });
+        editRuta(id) {
+            this.$router.push({ name: 'EditarRuta', params: { id: `${id}` } });
         },
-        newVehiculo() {
-            this.$router.push({ name: 'NewVehiculo' });
+        newRuta() {
+            this.$router.push({ name: 'NewRuta' });
         }
     },
     mounted() {
         axios
-            .get("http://127.0.0.1:8000/api/vehiculos")
-            .then(response => (this.vehiculos = response.data.vehiculos))
+            .get("http://127.0.0.1:8000/api/rutas")
+            .then(response => (this.rutas = response.data.rutas))
     },
 }
 </script>
