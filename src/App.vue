@@ -4,7 +4,8 @@
     <router-link to="/about">About</router-link>|
     <router-link to="/vehiculos">Vehiculos</router-link>|
     <router-link to="/rutas">Rutas</router-link>|
-    <router-link to="/conductores">Conductores</router-link>
+    <router-link to="/conductores">Conductores</router-link>|
+    <router-link to="/mantenimientos">Mantenimientos</router-link>
   </nav>
   <router-view/>
 </template>

@@ -9,6 +9,9 @@ import NewRuta from '../components/rutas/NewRuta.vue';
 import Conductores from '../views/conductores.vue';
 import EditarConductor from '../components/conductores/EditarConductor.vue';
 import NewConductor from '../components/conductores/NewConductor.vue';
+import Mantenimientos from '../views/mantenimientos.vue';
+import EditarMantenimiento from '../components/mantenimientos/EditarMantenimiento.vue';
+import NewMantenimiento from '../components/mantenimientos/NewMantenimiento.vue';
 
 const routes = [{
         path: '/',
@@ -59,6 +62,21 @@ const routes = [{
         path: '/add-conductores/',
         name: 'NewConductor',
         component: NewConductor
+    },
+    {
+        path: '/mantenimientos',
+        name: 'Mantenimientos',
+        component: Mantenimientos
+    },
+    {
+        path: '/editar-mantenimiento/:id',
+        name: 'EditarMantenimiento',
+        component: EditarMantenimiento
+    },
+    {
+        path: '/add-mantenimientos/',
+        name: 'NewMantenimiento',
+        component: NewMantenimiento
     },
     {
         path: '/about',
