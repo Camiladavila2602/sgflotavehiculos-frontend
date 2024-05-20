@@ -63,9 +63,10 @@ export default {
                     axios.delete(`http://127.0.0.1:8000/api/vehiculos/${codigo}`)
                         .then(response => {
                             if (response.data.success) {
-                                window.location.reload()
+                                
                                 Swal.fire('Deleted!!', '', 'success')
                                 this.products = response.data.products
+                                window.location.reload()
                             }
                         })
                 }
