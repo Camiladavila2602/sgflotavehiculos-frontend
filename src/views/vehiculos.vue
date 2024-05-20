@@ -59,12 +59,10 @@ export default {
                 showCancelButton: true,
                 confirmButtonText: `Delete`,
             }).then((result) => {
-                /* Read more about isConfirmed, isDenied below*/
                 if (result.isConfirmed) {
                     axios.delete(`http://127.0.0.1:8000/api/vehiculos/${codigo}`)
                         .then(response => {
                             if (response.data.success) {
-                                // Recargar la página
                                 window.location.reload()
                                 Swal.fire('Deleted!!', '', 'success')
                                 this.products = response.data.products
