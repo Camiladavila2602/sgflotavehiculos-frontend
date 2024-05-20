@@ -62,9 +62,7 @@ export default {
                         .then(response => {
                             if (response.data.success) {
                                 window.location.reload()
-                                Swal.fire('Deleted!!', '', 'success')
-                                this.products = response.data.products
-                                
+                                Swal.fire('Deleted!!', '', 'success')                                
                             }
                         })
                 }

@@ -6,6 +6,9 @@ import NewVehiculo from '../components/vehiculos/NewVehiculo.vue';
 import Rutas from '../views/rutas.vue';
 import EditarRuta from '../components/rutas/EditarRuta.vue';
 import NewRuta from '../components/rutas/NewRuta.vue';
+import Conductores from '../views/conductores.vue';
+import EditarConductor from '../components/conductores/EditarConductor.vue';
+import NewConductor from '../components/conductores/NewConductor.vue';
 
 const routes = [{
         path: '/',
@@ -41,6 +44,21 @@ const routes = [{
         path: '/add-rutas/',
         name: 'NewRuta',
         component: NewRuta
+    },
+    {
+        path: '/conductores',
+        name: 'Conductores',
+        component: Conductores
+    },
+    {
+        path: '/editar-conductor/:id',
+        name: 'EditarConductor',
+        component: EditarConductor
+    },
+    {
+        path: '/add-conductores/',
+        name: 'NewConductor',
+        component: NewConductor
     },
     {
         path: '/about',
