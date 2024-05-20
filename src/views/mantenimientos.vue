@@ -53,7 +53,7 @@ export default {
     methods: {
         deleteMantenimiento(codigo) {
             Swal.fire({
-                title: `Do you want to delete the Matenimientos with id ${codigo}?`,
+                title: `Do you want to delete the Mantenimientos with id ${codigo}?`,
                 showCancelButton: true,
                 confirmButtonText: `Delete`,
             }).then((result) => {

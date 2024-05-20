@@ -5,7 +5,8 @@
     <router-link to="/vehiculos">Vehiculos</router-link>|
     <router-link to="/rutas">Rutas</router-link>|
     <router-link to="/conductores">Conductores</router-link>|
-    <router-link to="/mantenimientos">Mantenimientos</router-link>
+    <router-link to="/mantenimientos">Mantenimientos</router-link>|
+    <router-link to="/registros_viajes">Registros de viajes</router-link>
   </nav>
   <router-view/>
 </template>

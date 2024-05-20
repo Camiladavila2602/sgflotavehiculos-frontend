@@ -12,6 +12,9 @@ import NewConductor from '../components/conductores/NewConductor.vue';
 import Mantenimientos from '../views/mantenimientos.vue';
 import EditarMantenimiento from '../components/mantenimientos/EditarMantenimiento.vue';
 import NewMantenimiento from '../components/mantenimientos/NewMantenimiento.vue';
+import Registros_viajes from '../views/registros_viajes.vue';
+import EditarRegistros_viaje from '../components/registros_viajes/EditarRegistros_viaje.vue';
+import NewRegistros_viaje from '../components/registros_viajes/NewRegistros_viaje.vue';
 
 const routes = [{
         path: '/',
@@ -77,6 +80,21 @@ const routes = [{
         path: '/add-mantenimientos/',
         name: 'NewMantenimiento',
         component: NewMantenimiento
+    },
+    {
+        path: '/registros_viajes',
+        name: 'Registros_viajes',
+        component: Registros_viajes
+    },
+    {
+        path: '/editar-registros_viaje/:id',
+        name: 'EditarRegistros_viaje',
+        component: EditarRegistros_viaje
+    },
+    {
+        path: '/add-registros_viajes/',
+        name: 'NewRegistros_viaje',
+        component: NewRegistros_viaje
     },
     {
         path: '/about',
